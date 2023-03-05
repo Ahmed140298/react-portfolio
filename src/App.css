@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;700;800&family=Montserrat:wght@100;400;500;700&family=Open+Sans:ital,wght@0,300;0,400;1,400&family=Roboto:ital,wght@0,100;0,900;1,400;1,700&display=swap");
 /* Header styles*/
 
 .header-wrapper {
@@ -14,7 +15,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrar", sans-serif;
   color: #f71309;
   position: absolute;
   top: 0;
@@ -26,7 +27,14 @@
   font-weight: bolder;
   text-transform: uppercase;
 }
-
+@media screen and (max-width: 768px) {
+  .main-info h2 {
+    font-size: 1.5rem !important;
+  }
+  .typed-text {
+    font-size: 1.3rem !important;
+  }
+}
 /* typed text styles*/
 
 .typed-text {
@@ -41,8 +49,8 @@
   border-radius: 5px;
   padding: 10px 12px;
   text-transform: uppercase;
-  background: #09F734;
-  color: #641E16 ;
+  background: #09f734;
+  color: #641e16;
   text-decoration: none;
   margin: 2rem;
   font-size: bolder;
@@ -50,4 +58,13 @@
 .btn-main:hover {
   background: #d4827e;
   color: #fff;
+}
+@media screen and (max-width: 500px) {
+  .header-wrapper {
+    background-image: url("./images/codelaptop.png");
+    background-position:50%;
+    background-size: cover;
+    height: 90vh;
+    background-repeat: no-repeat;
+  }
 }

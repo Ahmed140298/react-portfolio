@@ -3,9 +3,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../images/logo.jpeg";
 import "./Navbar.css";
 import {Link} from "react-router-dom";
+import { useState } from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
+
+
+
+
 const Navbar = () => {
+
+
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+
+  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container">
@@ -16,12 +27,13 @@ const Navbar = () => {
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
-          aria-expanded="false"
+          aria-expanded= {!isNavCollapsed ? true : false} 
           aria-label="Toggle navigation"
-        >
+          onClick={handleNavCollapse}>
+          {/* <span class="navbar-toggler-icon"></span> */}
           <FontAwesomeIcon icon={faBars} style={{color: "#fff"}}/>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto p-3">
             <li className="nav-item active">
               <Link className="nav-link " aria-current="page" to="/">
